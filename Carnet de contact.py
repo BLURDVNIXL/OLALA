@@ -1,20 +1,23 @@
 class Personne:
-    def __init__(self, nom, telephone, email):
+    def __init__(self, nom: str, telephone: str, email: str) -> None:
         self.nom = nom
         self.telephone = telephone
         self.email = email
 
 contact=[]
 
-def ajouter_contact(nom, telephone, email):
+def ajouter_contact(nom: str, telephone: str, email: str):
     personne = Personne(nom, telephone, email)
     contact.append(personne)
 
 def afficher_contacts():
+    if not contact:
+        print("Aucun contact à afficher.")
+        return
     for personne in contact:
         print(f"Nom: {personne.nom}, Téléphone: {personne.telephone}, Email: {personne.email}")
 
-def rechercher_contact(nom):
+def rechercher_contact(nom: str):
     for personne in contact:
         if personne.nom == nom:
             print(f"Nom: {personne.nom}, Téléphone: {personne.telephone}, Email: {personne.email}")
