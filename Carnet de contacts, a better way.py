@@ -16,6 +16,10 @@ class CarnetDeContacts:
         self.contacts[personne.nom] = personne
 
     def afficher_contacts(self) -> None:
+        if not self.contacts:
+            print("Aucun contact enregistré.")
+            return
+
         for contact in self.contacts:
             print(self.contacts[contact])
 
